@@ -12,8 +12,7 @@ class MailReceiver {
      fun sortMail(email: String, password: String) : MutableList<MutableList<Message>>  {
 
         var i = 0
-        for (message in Mailer.receive("letter.tpu.ru", 993, email, password)
-            ?.reversed()!!) {
+        for (message in Mailer.receive("letter.tpu.ru", 993, email, password)!!.reversed()) {
             if (i > 200) break
             val newMessage = MessageParser.parseMessage(message)
             findGroup = false
