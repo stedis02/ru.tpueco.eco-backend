@@ -17,7 +17,7 @@ fun Application.configureRegisterRouting() {
            val loginReceive = call.receive<RegisterReceiveRemoteModel>()
 
             val mr = MailReceiver()
-            val mailResponse = mr.sortMail(loginReceive.email, loginReceive.password)
+          //  val mailResponse = mr.sortMail(loginReceive.email, loginReceive.password)
                 val token =  UUID.randomUUID().toString()
             InMemoryCash.userList.add(loginReceive)
                 InMemoryCash.token.add(TokenCash(loginReceive.email, token))
