@@ -106,7 +106,7 @@ companion object {
 
     fun parseDate(message: Message): MessageDate {
         val date: String = message.receivedDate.toString()
-        val year = transformYear(date)
+        val year = "1111"
         val month = transformMonth(date)
         val day = transformDay(date)
         val dayOfWeek = transformDayOfTheWeek(date)
