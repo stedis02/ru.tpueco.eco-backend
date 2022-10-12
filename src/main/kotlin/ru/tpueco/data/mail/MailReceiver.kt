@@ -13,7 +13,7 @@ class MailReceiver {
 
         var i = 0
         for (message in Mailer.receive("letter.tpu.ru", 993, email, password)!!.reversed()) {
-            if (i > 200) break
+            if (i > 20) break
             val newMessage = MessageParser.parseMessage(message)
             findGroup = false
             addMessageToGroupWithSameAddress(newMessage)
