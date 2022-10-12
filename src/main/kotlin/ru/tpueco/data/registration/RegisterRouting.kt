@@ -7,6 +7,7 @@ import io.ktor.server.response.*
 import io.ktor.server.request.*
 import ru.tpueco.cash.InMemoryCash
 import ru.tpueco.cash.TokenCash
+import ru.tpueco.data.mail.MailReceiver
 import java.util.*
 
 fun Application.configureRegisterRouting() {
@@ -15,6 +16,8 @@ fun Application.configureRegisterRouting() {
         post("/register") {
            val loginReceive = call.receive<RegisterReceiveRemoteModel>()
 
+            val mr = MailReceiver()
+            val mailResponse = mr.sortMail(loginReceive.email, loginReceive.password)
                 val token =  UUID.randomUUID().toString()
             InMemoryCash.userList.add(loginReceive)
                 InMemoryCash.token.add(TokenCash(loginReceive.email, token))

@@ -8,7 +8,7 @@ import ru.tpueco.data.registration.configureRegisterRouting
 import ru.tpueco.plugins.*
 
 fun main() {
-    embeddedServer(Netty,port = System.getenv("PORT").toInt()) {
+    embeddedServer(Netty, System.getenv("PORT").toInt()) {
         configureSerialization()
         configureRouting()
         configureMailRouting()
