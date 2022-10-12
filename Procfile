@@ -1,0 +1,1 @@
+web: ./build/install/ru.tpueco.eco-backend/bin/ru.tpueco.eco-backend
